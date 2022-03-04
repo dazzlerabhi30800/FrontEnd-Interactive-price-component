@@ -66,7 +66,7 @@ header p {
     justify-content : center;
     align-items : center;
     text-align : center;
-    width : 20rem;
+    width : 21rem;
 }
 .one {
     display : flex;
@@ -91,43 +91,47 @@ header p {
 
 
 
-.slider {
-    grid-area : two;
-    background : #ccc;
-    border-radius : 10px;
-    height : 7px;
+.input-slider {
+    width : 350px;
+    padding : 0 40px;
     margin-top : 1rem;
-    position : relative;
-    display : flex;
-    /* justify-content : center; */
-    align-items : center;
-    width : 16rem;
+    grid-area : two;
 }
-.slider::after {
-    position : absolute;
-    content : '';
-    width : var(--slider-background);
-    height : 100%;
-    left : 0;
-    top : 0;
-    background :hsla(174, 88%, 74%, 0.651);
+.input-slider input {
+    background: linear-gradient(
+      to right,
+      #10d5c2 0%,
+      #10d5c2 50%,
+      #d0d0d1 50%,
+      #b3b3b6 100%
+    );
+    border-radius : 8px;
+    height : 8px;
+    width : 100%;
+    border-radius : 4px;
+    outline : none;
+    transition : all .45s ease-in;
+    -webkit-appearance: none;
 }
-.slider-dot {
-    background : hsl(174, 86%, 45%);
-    padding : .3rem .3rem;
-    border-radius : 50%;
-    z-index : 22;
-    transition : all .4s linear;
+.input-slider input::-webkit-slider-thumb {
+    -webkit-appearance : none;
+    appearance : none;
+    width : 40px;
+    height : 40px;
+    border-radius : 50px;
+    background : url(images/icon-slider.svg) rgb(16,213, 194) center no-repeat;
+    box-shadow : 0px 10px 20px 0px rgba(16,213,194, 0.7);
     cursor : pointer;
-    /* display : flex; */
-    /* justify-content : center; */
-    /* align-items : center; */
-    position : absolute;
-    left : 0%;
-
+    transition : all .2s;
 }
-.slider-dot:hover{
-    box-shadow : 1px 1px 10px 6px rgba(68, 243, 199, 0.404);    
+.input-slider input::-webkit-slider-thumb:hover {
+    background: url(https://raw.githubusercontent.com/milenig/fend-mentor_pricing-component/3ccfd6b18e87377a950915288ef64c896969bf62/images/icon-slider.svg)
+    rgb(27, 230, 209) center no-repeat;
+}
+.input-slider input::-webkit-slider-thumb:active {
+    cursor : grabbing;
+    background: url(https://raw.githubusercontent.com/milenig/fend-mentor_pricing-component/3ccfd6b18e87377a950915288ef64c896969bf62/images/icon-slider.svg)
+          rgb(13, 190, 173) center no-repeat;
 }
 
 
@@ -149,7 +153,7 @@ header p {
 
 .billing-wrapper {
     display : flex;
-    justify-content : space-between;
+    /* justify-content : space-between; */
     margin-top : 2rem;
     /* background : rgba(255, 0, 0, 0.178); */
     padding : .5rem 1rem;
@@ -185,7 +189,176 @@ header p {
 }
 .circle.active {
     /* left : initial; */
-    left : 26px;
+    left : 28px;
+}
+
+.year { 
+    white-space : nowrap;
+    margin-left : .4rem;
+    font-size : .8rem;
+}
+.discount {
+    margin-left : .4rem;
+    font-size : .6rem;
+    background : rgba(255, 0, 0, 0.363);
+    padding : .1rem .3rem;
+    border-radius : 20px;
+    color : red;
+}
+
+/* Border  */
+
+.border {
+    border : 1px solid rgba(204, 204, 204, 0.349);
+    width : 18rem;
+    margin-top : 1rem;
+}
+
+
+/* Section Two  */
+.two {
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    text-align : center;
+}
+.link-wrapper {
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    margin-top : 10px;
+}
+.link {
+    display : flex;
+    justify-content : space-evenly;
+    align-items : center;
+    text-align : center;
+}
+.link:not(:nth-child(1)){
+    margin-top : 7px;
+}
+.link img {
+    margin-right : 10px;
+}
+.link-title {
+    font-size : .8rem;
+    font-weight : light;
+    color : rgb(150, 146, 146);
+}
+
+.btn {
+    margin-top : 1rem;
+    text-align : center;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    background :hsl(227, 35%, 25%);
+    padding : .6rem 1.5rem;
+    font-size : .7rem;
+    color : white;
+    border-radius : 20px;
+    cursor : pointer;
+    transition : all .3s ease-in;
+    border : 1px solid hsla(227, 35%, 25%, 0);
+}
+.btn:hover {
+    background : transparent;
+    border : 1px solid hsl(227, 35%, 25%);
+    color : black;
+}
+
+@media screen and (min-width : 1000px) {
+    .container {
+        margin-top : 1rem;
+        width : 25rem;
+    }
+    .detail-wrapper {
+        display : grid;
+        grid-auto-columns : 1fr;
+        grid-template-areas : 
+        'one two'
+        'three three'
+        ;
+     }
+     .title {
+        grid-area : one;
+        font-size : 1rem;
+        color : rgb(114, 108, 108);
+        font-weight : bolder;
+        align-self : center;
+    }
+    .input-slider {
+        width : 350px;
+        padding : 0 40px;
+        margin-top : 2rem;
+        grid-area : three;
+    }
+     .price {
+        grid-area : two;
+        margin-top : -.1rem;
+        font-size : 1.4rem;
+        color : rgb(41, 39, 39);
+        display : flex;
+        justify-content : center;
+        align-items : center;
+    }
+    .month {
+        font-size : .8rem;
+        color : rgb(148, 147, 147);
+        margin-left : .3rem;
+    }
+
+    .two {
+        display : flex;
+        flex-direction : row;
+        /* justify-content : space-between; */
+        align-items : center;
+        text-align : center;
+        margin-top : 1.4rem;
+    }
+    .link-wrapper {
+        display : flex;
+        flex-direction : column;
+        justify-content : center;
+        align-items : center;
+        margin-top : 10px;
+        margin-right : 2rem;
+    }
+    .link {
+        display : flex;
+        justify-content : space-evenly;
+        align-items : center;
+        text-align : center;
+    }
+    .link:not(:nth-child(1)){
+        margin-top : 7px;
+    }
+    .link img {
+        margin-right : 10px;
+    }
+    .link-title {
+        font-size : .8rem;
+        font-weight : light;
+        color : rgb(150, 146, 146);
+    }
+    
+    .btn {
+        margin-top : 1rem;
+        text-align : center;
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        background :hsl(227, 35%, 25%);
+        padding : .6rem 1.5rem;
+        font-size : .7rem;
+        color : white;
+        border-radius : 20px;
+        cursor : pointer;
+        transition : all .3s ease-in;
+        border : 1px solid hsla(227, 35%, 25%, 0);
+    }
 }
 
 
