@@ -1,5 +1,7 @@
 # Frontend Mentor - Interactive pricing component
 
+Site Deployed at : https://youthful-lalande-b0d845.netlify.app/
+
 ![Design preview for the Interactive pricing component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
